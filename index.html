@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarir-NLP: Personalized AI Salesman</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Use the Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom red color for branding */
+        .bg-brand-red { background-color: #c00; }
+        .text-brand-red { color: #c00; }
+        .hover\:bg-brand-red-dark:hover { background-color: #a00; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Main Container -->
+    <div class="container mx-auto max-w-4xl p-4 sm:p-6 lg:p-8">
+        
+        <!-- Header Section -->
+        <header class="bg-brand-red text-white p-6 rounded-xl shadow-lg text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold">Jarir-NLP: Personalized AI Salesman</h1>
+            <p class="text-md md:text-lg mt-4 max-w-2xl mx-auto opacity-90">
+                This project creates a personalized shopping experience for electronics buyers on Jarir's online platform, emulating the interactive and consultative role of a showroom salesman using AI.
+            </p>
+        </header>
+
+        <main class="space-y-12">
+
+            <!-- Team Members Section -->
+            <section class="bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-bold text-brand-red mb-6 text-center">Project Team</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    
+                    <!-- Team Member Card: Almaan Khan -->
+                    <div class="flex flex-col items-center">
+                        <img src="https://placehold.co/150x150/e2e8f0/334155?text=Almaan" 
+                             alt="Almaan Khan" 
+                             class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-gray-200 shadow-sm mb-3">
+                        <p class="font-semibold text-gray-800 text-md">Almaan Khan</p>
+                    </div>
+                    
+                    <!-- Team Member Card: Baraa Zino -->
+                    <div class="flex flex-col items-center">
+                        <img src="https://placehold.co/150x150/e2e8f0/334155?text=Baraa" 
+                             alt="Baraa Zino" 
+                             class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-gray-200 shadow-sm mb-3">
+                        <p class="font-semibold text-gray-800 text-md">Baraa Zino</p>
+                    </div>
+
+                    <!-- Team Member Card: Muhammad Ammar Sohail -->
+                    <div class="flex flex-col items-center">
+                        <img src="https://placehold.co/150x150/e2e8f0/334155?text=Ammar" 
+                             alt="Muhammad Ammar Sohail" 
+                             class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-gray-200 shadow-sm mb-3">
+                        <p class="font-semibold text-gray-800 text-md">Muhammad Ammar Sohail</p>
+                    </div>
+
+                    <!-- Team Member Card: Mohammed Rashad -->
+                    <div class="flex flex-col items-center">
+                        <img src="https://placehold.co/150x150/e2e8f0/334155?text=Mohammed" 
+                             alt="Mohammed Rashad" 
+                             class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-gray-200 shadow-sm mb-3">
+                        <p class="font-semibold text-gray-800 text-md">Mohammed Rashad</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Poster Section -->
+            <section class="bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-bold text-brand-red mb-4 text-center">Project Poster</h2>
+                <!-- IMPORTANT: Replace 'poster.png' with the actual filename of your poster image. -->
+                <div class="flex justify-center">
+                    <img src="poster.png" 
+                         alt="Project Poster" 
+                         class="rounded-lg border-4 border-gray-200 shadow-md max-w-full h-auto"
+                         onerror="this.onerror=null;this.src='https://placehold.co/800x600/c00/ffffff?text=Poster+Image+Here';">
+                </div>
+            </section>
+
+            <!-- PDF Report Section -->
+            <section class="bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-bold text-brand-red mb-4 text-center">Project Report</h2>
+                <!-- 
+                    IMPORTANT: Replace 'KAUST_AI_Project_Status_Report___6 (1).pdf' with the actual filename.
+                    Make sure the PDF is in the same folder as this HTML file on your GitHub repo.
+                -->
+                <div class="w-full h-[600px] border-4 border-gray-200 rounded-lg overflow-hidden">
+                    <iframe src="KAUST_AI_Project_Status_Report___6 (1).pdf" width="100%" height="100%" frameborder="0">
+                        <p>Your browser does not support PDFs. <a href="KAUST_AI_Project_Status_Report___6 (1).pdf">Download the PDF</a>.</p>
+                    </iframe>
+                </div>
+            </section>
+
+            <!-- GitHub Link Section -->
+            <section class="text-center">
+                <!-- IMPORTANT: Replace '#' with the URL to your project's GitHub repository. -->
+                <a href="#" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="inline-block bg-brand-red text-white font-bold text-xl py-4 px-10 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:bg-brand-red-dark">
+                    View Project on GitHub
+                </a>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 mt-12">
+            <p>&copy; 2024 Jarir-NLP Project Team. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
