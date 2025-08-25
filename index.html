@@ -22,6 +22,55 @@
         .bg-brand-red { background-color: #c00; }
         .text-brand-red { color: #c00; }
         .hover\:bg-brand-red-dark:hover { background-color: #a00; }
+
+        /* Modal styles for fullscreen image */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 50; 
+            padding-top: 50px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .modal-content {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Style to crop team member images to the top half */
+        .team-photo {
+            object-fit: cover;
+            object-position: top; /* This line crops the image to show the top part */
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -46,33 +95,33 @@
                     
                     <!-- Team Member Card: Almaan Khan -->
                     <div class="flex flex-col items-center">
-                        <img src="https://placehold.co/150x150/e2e8f0/334155?text=Almaan" 
+                        <img src="almaan_khan.jpg" 
                              alt="Almaan Khan" 
-                             class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-gray-200 shadow-sm mb-3">
+                             class="team-photo w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-gray-200 shadow-sm mb-3">
                         <p class="font-semibold text-gray-800 text-md">Almaan Khan</p>
                     </div>
                     
                     <!-- Team Member Card: Baraa Zino -->
                     <div class="flex flex-col items-center">
-                        <img src="https://placehold.co/150x150/e2e8f0/334155?text=Baraa" 
+                        <img src="baraa_zino.jpg" 
                              alt="Baraa Zino" 
-                             class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-gray-200 shadow-sm mb-3">
+                             class="team-photo w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-gray-200 shadow-sm mb-3">
                         <p class="font-semibold text-gray-800 text-md">Baraa Zino</p>
                     </div>
 
                     <!-- Team Member Card: Muhammad Ammar Sohail -->
                     <div class="flex flex-col items-center">
-                        <img src="https://placehold.co/150x150/e2e8f0/334155?text=Ammar" 
+                        <img src="mohammed_sohail (1).jpg" 
                              alt="Muhammad Ammar Sohail" 
-                             class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-gray-200 shadow-sm mb-3">
+                             class="team-photo w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-gray-200 shadow-sm mb-3">
                         <p class="font-semibold text-gray-800 text-md">Muhammad Ammar Sohail</p>
                     </div>
 
                     <!-- Team Member Card: Mohammed Rashad -->
                     <div class="flex flex-col items-center">
-                        <img src="https://placehold.co/150x150/e2e8f0/334155?text=Mohammed" 
+                        <img src="mohammed_rashad.jpg" 
                              alt="Mohammed Rashad" 
-                             class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-gray-200 shadow-sm mb-3">
+                             class="team-photo w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-gray-200 shadow-sm mb-3">
                         <p class="font-semibold text-gray-800 text-md">Mohammed Rashad</p>
                     </div>
 
@@ -82,32 +131,32 @@
             <!-- Poster Section -->
             <section class="bg-white p-6 rounded-xl shadow-lg">
                 <h2 class="text-2xl font-bold text-brand-red mb-4 text-center">Project Poster</h2>
-                <!-- IMPORTANT: Replace 'poster.png' with the actual filename of your poster image. -->
                 <div class="flex justify-center">
-                    <img src="poster.png" 
+                    <!-- The clickable poster image -->
+                    <img id="posterImg" src="WhatsApp Image 2025-08-06 at 11.18.55.jpeg" 
                          alt="Project Poster" 
-                         class="rounded-lg border-4 border-gray-200 shadow-md max-w-full h-auto"
-                         onerror="this.onerror=null;this.src='https://placehold.co/800x600/c00/ffffff?text=Poster+Image+Here';">
+                         class="rounded-lg border-4 border-gray-200 shadow-md max-w-full h-auto cursor-pointer transition-opacity hover:opacity-80">
                 </div>
             </section>
 
             <!-- PDF Report Section -->
             <section class="bg-white p-6 rounded-xl shadow-lg">
-                <h2 class="text-2xl font-bold text-brand-red mb-4 text-center">Project Report</h2>
-                <!-- 
-                    IMPORTANT: Replace 'KAUST_AI_Project_Status_Report___6 (1).pdf' with the actual filename.
-                    Make sure the PDF is in the same folder as this HTML file on your GitHub repo.
-                -->
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-brand-red">Project Report</h2>
+                    <!-- Link to open PDF in a new tab -->
+                    <a href="KAUST_AI_Project_Status_Final_Report.pdf" target="_blank" class="text-sm font-semibold text-brand-red hover:underline">
+                        View Fullscreen
+                    </a>
+                </div>
                 <div class="w-full h-[600px] border-4 border-gray-200 rounded-lg overflow-hidden">
-                    <iframe src="KAUST_AI_Project_Status_Report___6 (1).pdf" width="100%" height="100%" frameborder="0">
-                        <p>Your browser does not support PDFs. <a href="KAUST_AI_Project_Status_Report___6 (1).pdf">Download the PDF</a>.</p>
+                    <iframe src="KAUST_AI_Project_Status_Final_Report.pdf" width="100%" height="100%" frameborder="0">
+                        <p>Your browser does not support PDFs. <a href="KAUST_AI_Project_Status_Final_Report.pdf">Download the PDF</a>.</p>
                     </iframe>
                 </div>
             </section>
 
             <!-- GitHub Link Section -->
             <section class="text-center">
-                <!-- IMPORTANT: Replace '#' with the URL to your project's GitHub repository. -->
                 <a href="#" 
                    target="_blank" 
                    rel="noopener noreferrer"
@@ -123,6 +172,38 @@
         </footer>
 
     </div>
+
+    <!-- The Modal for the poster image -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        // Get the modal elements
+        var modal = document.getElementById("imageModal");
+        var img = document.getElementById("posterImg");
+        var modalImg = document.getElementById("modalImage");
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the image, open the modal 
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal content, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
